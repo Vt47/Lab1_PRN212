@@ -6,19 +6,21 @@ namespace Repositories
 {
     public class ProductRepository : IProductRepository
     {
+        private readonly ProductDAO dao = new ProductDAO();
+
         public void DeleteProduct(Product p)
-            => ProductDAO.DeleteProduct(p);
+            => dao.DeleteProduct(p);
 
         public void SaveProduct(Product p)
-            => ProductDAO.SaveProduct(p);
+            => dao.SaveProduct(p);
 
         public void UpdateProduct(Product p)
-            => ProductDAO.UpdateProduct(p);
+            => dao.UpdateProduct(p);
 
         public List<Product> GetProducts()
-            => ProductDAO.GetProducts();
+            => dao.GetProducts();
 
         public Product GetProductById(int id)
-            => ProductDAO.GetProductById(id);
+            => dao.GetProductById(id);
     }
 }

@@ -4,15 +4,16 @@ namespace BusinessObjects
 {
     public partial class Product
     {
-        public Product(int id, string name, int catId,
-                       short unitInStock, decimal price)
+        public Product() { }
+        public Product(int id, string name, int? catId, short? unitInStock, decimal? price)
         {
-            this.ProductId = id;
-            this.ProductName = name;
-            this.CategoryId = catId;
-            this.UnitsInStock = unitInStock;
-            this.UnitPrice = price;
+            ProductId = id;
+            ProductName = name;
+            CategoryId = catId;
+            UnitsInStock = unitInStock;
+            UnitPrice = price;
         }
+
 
         public int ProductId { get; set; }
         public string ProductName { get; set; }
